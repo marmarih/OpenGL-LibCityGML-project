@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>665</width>
+    <height>578</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="20" column="2">
+     <widget class="QPushButton" name="openButton">
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Ouvrir un fichier</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="LODMinLabel">
+      <property name="text">
+       <string>LOD min</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QLabel" name="targetCoordLabel">
+      <property name="text">
+       <string>Cible (xyz)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="2">
+     <widget class="QSpinBox" name="zTar"/>
+    </item>
+    <item row="4" column="2">
+     <widget class="QSpinBox" name="lodMax">
+      <property name="suffix">
+       <string/>
+      </property>
+      <property name="maximum">
+       <number>4</number>
+      </property>
+      <property name="value">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QSpinBox" name="xTar"/>
+    </item>
+    <item row="11" column="2">
+     <widget class="QSpinBox" name="yTar"/>
+    </item>
+    <item row="15" column="2">
+     <widget class="QDoubleSpinBox" name="xyzSpeed">
+      <property name="decimals">
+       <number>2</number>
+      </property>
+      <property name="minimum">
+       <double>0.000000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QSpinBox" name="yCam"/>
+    </item>
+    <item row="14" column="2">
+     <widget class="QLabel" name="xyzSpeedLabel">
+      <property name="text">
+       <string>Vitesse (XYZ)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QSpinBox" name="lodMin">
+      <property name="maximum">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLabel" name="cameraCoordLabel">
+      <property name="text">
+       <string>Caméra (xyz)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QSpinBox" name="xCam"/>
+    </item>
+    <item row="18" column="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0" rowspan="21" colspan="2">
+     <widget class="GLWidget" name="glWidget" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>512</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <zorder>openButton</zorder>
+     </widget>
+    </item>
+    <item row="16" column="2">
+     <widget class="QLabel" name="rotSpeedLabel">
+      <property name="text">
+       <string>Vitesse (rotation)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2">
+     <widget class="QSpinBox" name="zCam"/>
+    </item>
+    <item row="13" column="2">
+     <widget class="QPushButton" name="lookAt">
+      <property name="text">
+       <string>Look At</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLabel" name="LODMaxLabel">
+      <property name="text">
+       <string>LOD max</string>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="2">
+     <widget class="QDoubleSpinBox" name="rotSpeed">
+      <property name="maximum">
+       <double>10.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>2.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>665</width>
+     <height>19</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GLWidget</class>
+   <extends>QWidget</extends>
+   <header>glwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
